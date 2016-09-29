@@ -1,0 +1,28 @@
+{
+  "name": "hubot-whos-on-call-mattermost",
+  "version": "1.0.0",
+  "description": "Display the on-call engineer in a channel header",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "npm run lint",
+    "lint": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cadecairos/hubot-whos-on-call-mattermost.git"
+  },
+  "keywords": [
+    "mattermost",
+    "pagerduty",
+    "hubot"
+  ],
+  "author": "Christopher De Cairos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cadecairos/hubot-whos-on-call-mattermost/issues"
+  },
+  "homepage": "https://github.com/cadecairos/hubot-whos-on-call-mattermost#readme",
+  "devDependencies": {
+    "coffeelint": "^1.15.7"
+  }
+}
