@@ -1,5 +1,8 @@
 [![Build Status](https://travis-ci.org/cadecairos/hubot-whos-on-call-mattermost.svg)](https://travis-ci.org/cadecairos/hubot-whos-on-call-mattermost)
+[![npm version](https://badge.fury.io/js/hubot-whos-on-call-mattermost.svg)](http://badge.fury.io/js/hubot-whos-on-call-mattermost)
+[![dependencies](https://david-dm.org/cadecairos/hubot-whos-on-call-mattermost.svg)](https://david-dm.org/cadecairos/hubot-whos-on-call-mattermost)
 
+[![npm stats](https://nodei.co/npm/hubot-whos-on-call-mattermost.png?downloads=true)](https://nodei.co/npm/hubot-whos-on-call-mattermost)
 
 # hubot-whos-on-call-mattermost
 
