@@ -12,6 +12,8 @@ Sadly, Pagerduty doesn't have a webhook event for a change in schedule, so a cro
 
 See [`src/whos-on-call.coffee`](src/whos-on-call.coffee) for full documentation.
 
+**NOTE: This script requires at least version 3.4.0 of [hubot-matteruser](https://www.npmjs.com/package/hubot-matteruser)**
+
 ## Installation
 
 `npm install hubot-whos-on-call-mattermost`
