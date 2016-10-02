@@ -1,6 +1,6 @@
 {
   "name": "hubot-whos-on-call-mattermost",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Display the on-call engineer in a channel header",
   "main": "index.coffee",
   "scripts": {
