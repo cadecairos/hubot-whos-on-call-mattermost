@@ -24,16 +24,16 @@ PAGERDUTY_SCHEDULE_REQUEST_URI = "https://api.pagerduty.com/oncalls?schedule_ids
 
 module.exports = (robot) ->
 
-  currentOnCallEngineer = ""
-
   robot.router.post '/webhook/on-call/:channel', (req, res) ->
 
     res.end ""
 
-    requestSecret = req.body.secret
-
-    unless requestSecret == WEBHOOK_SECRET
+    unless req.body.secret == WEBHOOK_SECRET
       return robot.logger.error "Invalid hook received"
+
+    onCallMap = robot.brain.get 'whos-on-call'
+
+    unless onCallMap? then onCallMap = {}
 
     channel = req.params.channel
     headerTemplate = if req.body.header? then req.body.header else DEFAULT_HEADER_TEMPLATE
@@ -52,13 +52,15 @@ module.exports = (robot) ->
 
         onCallEngineer = json.oncalls[0].user.summary
 
-        return unless onCallEngineer != currentOnCallEngineer
+        return unless onCallMap[channel] != onCallEngineer
+
+        onCallMap[channel] = onCallEngineer
+
+        robot.brain.set "whos-on-call", onCallMap
 
         robot.logger.info "Updating on call engineer to: #{onCallEngineer}"
 
-        currentOnCallEngineer = onCallEngineer
-
-        header = headerTemplate.replace("$ENGINEER", currentOnCallEngineer)
+        header = headerTemplate.replace("$ENGINEER", onCallEngineer)
 
         robot.adapter.changeHeader(channel, header)
 
